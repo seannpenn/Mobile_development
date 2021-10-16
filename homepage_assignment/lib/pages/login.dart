@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:homepage_assignment/main.dart';
 
+// ignore: camel_case_types
 class login extends StatefulWidget{
   @override
-  _loginState createState() => _loginState();
+  _loginstate createState() => _loginstate();
 }
 
-class _loginState extends State<login>{
+class _loginstate extends State<login>{
   @override
   Widget build(BuildContext context){
     return Scaffold(
@@ -46,22 +47,43 @@ class MyCustomForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        TextField(
-          decoration: const InputDecoration(
-          border: OutlineInputBorder(),
-          hintText: 'Enter username'
-          ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+
+              margin: EdgeInsets.only(top: 20),
+              width: 350,
+              child: TextField(
+                
+                decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: 'Enter username'
+                ),
+              ),
+            ),
+          ],
         ),
-        TextField(
-          
-          decoration: const InputDecoration(
-          border: OutlineInputBorder(),
-          hintText: 'Enter password'
-          ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              margin: EdgeInsets.only(top:10),
+              width: 350,
+              child: TextField(
+                
+                decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: 'Enter password'
+                ),
+              ),
+            ),
+          ],
         ),
         Container(
-          margin: EdgeInsets.only(top: 20),
+          margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
                 height: 50,
                 width: 200,
                 child: ElevatedButton(
@@ -76,7 +98,24 @@ class MyCustomForm extends StatelessWidget {
                       )
                     )
                   ),
-              ),
+            ),
+        Container(
+          child: TextButton(
+            
+            onPressed:(){},
+            child: (
+              Text(
+                'forgot password?',
+                style: TextStyle(
+                  fontSize: 10,
+                  color: Colors.grey[400],
+                  ),
+              )
+            ),
+            
+            
+          ),
+        ),
       ],
     );
   }
